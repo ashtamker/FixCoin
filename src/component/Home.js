@@ -4,7 +4,7 @@ const Home = () => {
 
     return(
         <div>
-            check hello
+            check hello?
         </div>
     )
 }
