@@ -12,6 +12,7 @@ function App() {
       <BrowserRouter>
       <Nav />
       <Route exact path="/" component={Home}/>
+      <Route exact path="/mybalance" component={Favorite}/>
       </BrowserRouter>
     
     </div>
