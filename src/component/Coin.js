@@ -5,13 +5,13 @@ const Coin = (name, image, symbol, price, volume) => {
         <div className="container-coin">
             <div className="coin-row">
                 <div className="coin">
-                    <img src={image}></img>
+                    <img src={image} alt="coin logo"></img>
                     <h1>{name}</h1>
                     <p className="coin-symbol">{symbol}</p>
                 </div>
                 <div className="coin-data">
                     <p className="coin-price">${price}</p>
-                    <p className="coin-volume">${volume.toLocaleString()}</p>
+                    <p className="coin-volume">${volume}</p>
                 </div>
             </div>
 

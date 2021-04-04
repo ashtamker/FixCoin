@@ -33,8 +33,8 @@ const filterTheCoins = coinsList.filter(coin =>
                 </form>
             </div>
             {filterTheCoins.map(coin => {
-                return (
-                    <Coin 
+                return( 
+                   <Coin 
                     key={coin.id} 
                     name={coin.name} 
                     image={coin.image} 
