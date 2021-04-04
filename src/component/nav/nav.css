@@ -1,0 +1,22 @@
+.main-nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
+    background-color: #0b0c10;
+
+}
+
+.main-nav li {
+    color: #45a29e;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 20px;
+} 
+
+.main-nav li:hover {
+    color: #66fcf1;
+    text-decoration: underline;
+   
+}

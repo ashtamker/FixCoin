@@ -12,6 +12,10 @@
     align-items: center;
     
 }
+.title {
+    color: #45a29e;
+    
+}
 
 .coin-text {
     margin-bottom: 32px;

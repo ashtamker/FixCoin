@@ -27,7 +27,8 @@ const filterTheCoins = coinsList.filter(coin =>
     return(
         <div className="coin-app">
             <div>
-                <h1 className="coin-text">Search a coins</h1>
+                <h1 className="title">FixCoin</h1>
+                <h2 className="coin-text">Search a coins</h2>
                 <form>
                     <input type="text" placeholder="Bitcoin" className="coin-input" onChange={onChangeSearch}></input> 
 
