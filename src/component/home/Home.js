@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import axios from 'axios';
-import Coin from './coin/Coin';
+import Coin from '../coin/Coin';
+import './home.css';
 
 const Home = () => {
     const [coinsList, setCoinsList] = useState([]);
