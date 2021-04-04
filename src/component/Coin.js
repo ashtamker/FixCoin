@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Coin = (name, image, symbol, price, volume) => {
+const Coin = ({name, image, symbol, price, volume}) => {
     return(
         <div className="container-coin">
             <div className="coin-row">

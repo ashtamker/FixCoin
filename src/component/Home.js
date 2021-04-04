@@ -21,7 +21,7 @@ const onChangeSearch = e => {
 }
 
 const filterTheCoins = coinsList.filter(coin => 
-   coin.name.toLowerCase().includes(searchCoin.toLocaleLowerCase()))
+   coin.name.toLowerCase().includes(searchCoin.toLowerCase()))
 
     return(
         <div className="coin-app">
