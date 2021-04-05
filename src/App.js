@@ -1,5 +1,5 @@
 import './App.css';
-import {BrowserRouter, Route} from 'react-router-dom';
+import {BrowserRouter as Router ,Route, Link, Switch, } from 'react-router-dom';
 import Home from './component/home/Home';
 import Favorite from './component/userfav/Favorite';
 import Nav from './component/nav/Nav';
@@ -9,11 +9,13 @@ import Nav from './component/nav/Nav';
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
+      <Router>
       <Nav />
+      <Switch>
       <Route exact path="/" component={Home}/>
-      <Route exact path="/mybalance" component={Favorite}/>
-      </BrowserRouter>
+      <Route path="/mybalance" component={Favorite}/>
+      </Switch>
+      </Router>
     
     </div>
   );
