@@ -32,7 +32,7 @@ const UserPage = () => {
             return <div>Loading...</div>
         }
         return (
-            <ul className="coinlist list-group mt-2">
+            <ul className="coinlist list-group mt-2 shadow border p-2 rounded mt-2 container">
                 {coins.map(coin => {
                     return <Coin  
                     key={coin.id} 
