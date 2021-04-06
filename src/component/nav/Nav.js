@@ -4,7 +4,7 @@ import './nav.css';
 
 const Nav = ()=> {
     return (
-        <div>
+        <div className="nav-container">
             <ul className="main-nav">
                 <Link to='/'>
                 <li id="home">Home</li>

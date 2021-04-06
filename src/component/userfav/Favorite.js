@@ -3,6 +3,11 @@ import './favorite.css';
 import apicoin from '../api/apicoin';
 
 const Favorite = () => {
+   
+    
+    
+    
+    
     return(
         <div className="fav-list">
             Hi
