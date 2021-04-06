@@ -15,7 +15,7 @@ const Home = () => {
 
     }).catch(
         error => console.log(error));
-},[]);
+    },[]);
 
 const onChangeSearch = e => {
     setSearchCoin(e.target.value)

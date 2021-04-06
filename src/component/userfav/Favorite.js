@@ -1,20 +1,16 @@
-import React from 'react';
+import React, {useState, createContext} from 'react';
 import './favorite.css';
-import apicoin from '../api/apicoin';
 
-const Favorite = () => {
-   
+
+export const Favorite =  createContext();
+
+
+export const FavoriteProvider = (props) => {
+    const [watchList, setWatchList] = useState(["bitcoin", "ethereum"])
     
-    
-    
-    
-    return(
-        <div className="fav-list">
-            Hi
-        </div>
+    return (
+        <Favorite.Provider value={{watchList}}>
+            {props.children}
+        </Favorite.Provider>
     )
-
 }
-
-
-export default Favorite;
