@@ -10,7 +10,7 @@ const Nav = ()=> {
                 <li id="home">Home</li>
                 </Link>
                 <Link to='/mybalance'>
-                <li>My Wallet</li>
+                <li className="list-li">My Wallet</li>
                 </Link>
                 <li>Convert</li>
             </ul>
