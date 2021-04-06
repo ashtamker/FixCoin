@@ -21,6 +21,8 @@ function App() {
       </Switch>
       </Router>
       </FavoriteProvider>
+      <i className="delete-icon far fa-times-circle text-danger"></i>
+
     </div>
   );
 }

@@ -3,6 +3,7 @@ import './userpage.css';
 import {Favorite} from '../userfav/Favorite';
 import axios from 'axios';
 import Coin from '../coin/Coin';
+import { Link } from 'react-router-dom';
 
 
 
@@ -32,7 +33,8 @@ const UserPage = () => {
             return <div>Loading...</div>
         }
         return (
-            <ul className="coinlist list-group mt-2 shadow border p-2 rounded mt-2 container">
+            <Link to="/" className="my1">
+            <li className="coinlist list-group mt-2 shadow border p-2 rounded mt-2 container">
                 {coins.map(coin => {
                     return <Coin  
                     key={coin.id} 
@@ -44,7 +46,9 @@ const UserPage = () => {
                     priceChange={coin.price_change_percentage_24h} 
                     marketcap={coin.market_cap} />
                 })}
-            </ul>
+                <i className="delete-icon far fa-times-circle text-danger"></i>
+            </li>
+            </Link>
         )
     }
 
