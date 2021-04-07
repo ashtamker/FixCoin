@@ -1,0 +1,32 @@
+.info{
+    display: flex;
+    width: 50vw;
+    height: 80vh;
+    margin:  auto;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #c5c6c7;
+    background: none;
+    
+}
+
+.info-container {
+    background-image: url("../../btc-chart-apr29.png");
+    background-position: center;
+    
+    
+}
+
+.title {
+    font-size: 56px;
+    background: none;
+}
+
+.info-more {
+    margin-top: 40px;
+    font-size: 26px;
+    background:none;
+    text-shadow: 2px 2px #0b0c10;
+    
+}
