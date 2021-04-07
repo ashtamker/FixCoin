@@ -2,15 +2,15 @@ import React, {useContext, useEffect, useState} from 'react';
 import './userpage.css';
 import {Favorite} from '../userfav/Favorite';
 import axios from 'axios';
-import Coin from '../coin/Coin';
-import { Link } from 'react-router-dom';
+import UserCoin from '../userCoin/UserCoin';
+
 
 
 
 
 const UserPage = () => {
     const [coins, setCoins] = useState([]);
-    const {watchList} = useContext(Favorite)
+    const {watchList, deleteCoin} = useContext(Favorite)
     const [isLoading, setIsLoading] = useState(false);
     console.log(watchList);
     useEffect(() => {
@@ -24,31 +24,31 @@ const UserPage = () => {
             });
             setCoins(response.data);
             setIsLoading(false);
+        };
+
+        if(watchList.length > 0){
+            fatchData();
         }
-        fatchData();
-    },[]);
+        else setCoins([]);
+    },[watchList]);
 
     const renderCoin = () => {
         if(isLoading) {
             return <div>Loading...</div>
         }
         return (
-            <Link to="/" className="my1">
-            <li className="coinlist list-group mt-2 shadow border p-2 rounded mt-2 container">
+           
+            <ul className="coinlist list-group mt-2 shadow border p-2 rounded mt-2 container">
                 {coins.map(coin => {
-                    return <Coin  
+                    return <UserCoin  
                     key={coin.id} 
-                    name={coin.name} 
-                    image={coin.image} 
-                    symbol={coin.symbol} 
-                    volume={coin.total_volume} 
-                    price={coin.current_price}
-                    priceChange={coin.price_change_percentage_24h} 
-                    marketcap={coin.market_cap} />
+                    coin={coin}
+                    deleteCoin={deleteCoin} />
                 })}
-                <i className="delete-icon far fa-times-circle text-danger"></i>
-            </li>
-            </Link>
+                
+                
+            </ul>
+           
         )
     }
 
