@@ -43,6 +43,7 @@ const currentCoins = coinsList.slice(indexOfFirstPost, indexOfLastPost);
                 <br/>
                 <h3>Top coins </h3>
             </div>
+                {/* <Coin coins={currentCoins} /> try pagination */}
             {filterTheCoins.map(coin => {
                 return( 
                    <Coin 
