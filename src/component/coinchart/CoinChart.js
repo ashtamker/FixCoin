@@ -1,42 +1,30 @@
 import React, { useRef, useEffect } from 'react';
-import {Chart} from "react-chartjs-2";
+import {Bar} from "react-chartjs-2";
+// import Chartjs from "chart.js";
+
+
 
 export const CoinChart = () => {
-    const myRef = useRef();
-    useEffect(() => {
-        if(myRef && myRef.current){
-            const chart = new Chart(myRef.current, {
-                type: 'line',
-    data: {
-        datasets: [
-            {
-            label: '# of Votes',
-            data: [
-                {x: 1, y: 15},
-                {x: 2, y: 9},
-                {x: 3, y: 21},
-            ],
-          
-          
-            borderWidth: 1
-        }]
-    },
-    options: {
-        scales: {
-            y: {
-                beginAtZero: true
-            }
-        }
-    }
-            })
-        } 
-    })
+
     return(
         <div>
-            <canvas ref={myRef} id="mychart" width={250} height={250}></canvas> 
-            
+           <Bar 
+           data={{ 
+              labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+            datasets: [
+                {
+                    label: '# of vote',
+                    data: [12, 19, 3, 5, 2, 3]
+                }
+            ]
+            }}
+              height={400}
+              width={600}
+              options={{
+                  maintainAspectRatio: false,
+              }} 
+              />          
         </div>
-    ) 
-};
-
+    )
+}
 export default CoinChart;
