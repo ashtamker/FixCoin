@@ -17,7 +17,7 @@ export const FavoriteProvider = (props) => {
     };
 
     return (
-        <Favorite.Provider value={{watchList}}>
+        <Favorite.Provider value={{watchList, deleteCoin}}>
             {props.children}
         </Favorite.Provider>
     )

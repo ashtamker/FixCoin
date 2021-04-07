@@ -1,8 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none !important;
+  }
+
 .coinlist-item {
     background-color: #0b0c10;
+    display: flex;
     
 }
+.coinlist-item:hover {
+  background-color: #66fcf1;
+} 
 
 .coin-price {
     color: #c5c6c7;
+}
+
+.delete-icon {
+    display: none;
+    position: absolute;
+    right: -2px;
+    
+}
+
+.coin:hover .delete-icon {
+    display: block;
+    
+}
+
+ .coin {
+    background-color: #0b0c10;
 }

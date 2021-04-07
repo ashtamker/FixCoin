@@ -24,12 +24,12 @@ const UserCoin = ({ coin, deleteCoin }) => {
             )}
             {coin.price_change_percentage_24h}
           </span>
-          <i
+          <button
             onClick={(e) => {
               e.preventDefault();
               deleteCoin(coin.id);
             }}
-            className="delete-icon far fa-times-circle text-danger"></i>
+            className="delete-icon far fa-times-circle text-danger">X</button>
         </li>
       </Link>
     );
