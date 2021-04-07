@@ -1,4 +1,4 @@
-import React, {useState, createContext} from 'react';
+import React, {useState, createContext, useContext, useEffect} from 'react';
 import './favorite.css';
 
 
@@ -6,8 +6,13 @@ export const Favorite =  createContext();
 
 
 export const FavoriteProvider = (props) => {
-    const [watchList, setWatchList] = useState(["bitcoin", "ethereum", "qtum"])
+    const [watchList, setWatchList] = useState(
+      localStorage.getItem("myList").split(",") || ["bitcoin", "ethereum", "qtum"])
     
+    useEffect(() => {
+        localStorage.setItem("myList", watchList);
+    },[watchList])
+
     const deleteCoin = (coin) => {
         setWatchList(
             watchList.filter((el) => {
