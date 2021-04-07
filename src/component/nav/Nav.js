@@ -9,6 +9,9 @@ const Nav = ()=> {
                 <Link to='/'>
                 <li id="home">Home</li>
                 </Link>
+                <Link to='/about'>
+                <li id="about">What Is Crypto</li>
+                </Link>
                 <Link to='/mybalance'>
                 <li className="list-li">My Wallet</li>
                 </Link>

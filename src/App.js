@@ -5,6 +5,7 @@ import { FavoriteProvider } from './component/userfav/Favorite';
 import Nav from './component/nav/Nav';
 import UserPage from './component/userpage/UserPage';
 import CoinDetails from './component/coindetails/CoinDetails';
+import AboutCrypto from './component/about/AboutCrypto';
 
 
 
@@ -18,6 +19,7 @@ function App() {
       <Nav />
       <Switch>
       <Route exact path="/" component={Home}/>
+      <Route path="/about" component={AboutCrypto}/>
       <Route path="/mybalance" component={UserPage}/>
       <Route path="/usercoins/:id" component={CoinDetails}/>
       </Switch>
