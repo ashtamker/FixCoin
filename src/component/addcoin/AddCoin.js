@@ -1,7 +1,8 @@
 import React, { useState, useContext } from 'react';
 import { Favorite } from '../userfav/Favorite';
+import './addcoin.css';
 
-const AddCoin = () => {
+const AddCoin = ({key}) => {
     const [isActive, setIsActive] = useState(false);
     const {addCoin} = useContext(Favorite);
     const optionalCoins = [
@@ -27,7 +28,7 @@ const AddCoin = () => {
     return (
         <div className="dropdown">
             <button onClick={() => setIsActive(!isActive)} 
-            className="btn btn-primary dropdown-toggle" type="button">Add Coin</button>
+            className="btn btn-primary dropdown-toggle btn-pos" type="button">Add Coin</button>
             <div className={isActive ? "dropdown-menu show" : "dropdown-menu"} >
                 {optionalCoins.map((e) => {
                     return (
