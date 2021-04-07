@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useState, useContext } from 'react';
+import { Favorite } from '../userfav/Favorite';
 
 const AddCoin = () => {
+    const [isActive, setIsActive] = useState(false);
+    const {addCoin} = useContext(Favorite);
     const optionalCoins = [
         "bitcoin",
         "ethereum",
@@ -13,15 +16,22 @@ const AddCoin = () => {
         "binancecoin",
         "uniswap",
         "chainlink",
+        "qtum",
     ];
+
+    const onCoinClick = (coin) => {
+        addCoin(coin);
+        setIsActive(false);
+    };
     
     return (
         <div className="dropdown">
-            <button className="btn btn-primary dropdown-toggle" type="button">Add Coin</button>
-            <div className="dropdown-menu">
+            <button onClick={() => setIsActive(!isActive)} 
+            className="btn btn-primary dropdown-toggle" type="button">Add Coin</button>
+            <div className={isActive ? "dropdown-menu show" : "dropdown-menu"} >
                 {optionalCoins.map((e) => {
                     return (
-                        <a href="#" className="dropdown-item">
+                        <a onClick={() => onCoinClick(e)} href="#" className="dropdown-item">
                             {e}
                         </a>
                     )

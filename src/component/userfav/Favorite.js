@@ -6,7 +6,7 @@ export const Favorite =  createContext();
 
 
 export const FavoriteProvider = (props) => {
-    const [watchList, setWatchList] = useState(["bitcoin", "ethereum"])
+    const [watchList, setWatchList] = useState(["bitcoin", "ethereum", "qtum"])
     
     const deleteCoin = (coin) => {
         setWatchList(
@@ -16,8 +16,14 @@ export const FavoriteProvider = (props) => {
         );
     };
 
+    const addCoin = coin => {
+        if(watchList.indexOf(coin) === -1) {
+            setWatchList([...watchList, coin])
+        }
+    }
+
     return (
-        <Favorite.Provider value={{watchList, deleteCoin}}>
+        <Favorite.Provider value={{watchList, deleteCoin, addCoin}}>
             {props.children}
         </Favorite.Provider>
     )
