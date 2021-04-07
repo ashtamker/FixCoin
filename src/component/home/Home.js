@@ -6,6 +6,8 @@ import './home.css';
 const Home = () => {
     const [coinsList, setCoinsList] = useState([]);
     const [searchCoin, setSearchCoin] = useState('');
+    const [currentPage, setCurrentPage] = useState(1);
+    const [coinPerPage] = useState(10);
 
     useEffect(() => {
     axios
@@ -23,6 +25,11 @@ const onChangeSearch = e => {
 
 const filterTheCoins = coinsList.filter(coin => 
    coin.name.toLowerCase().includes(searchCoin.toLowerCase()))
+console.log(coinsList);
+
+const indexOfLastPost = currentPage * coinPerPage;
+const indexOfFirstPost = indexOfLastPost - coinPerPage;
+const currentCoins = coinsList.slice(indexOfFirstPost, indexOfLastPost);
 
     return(
         <div className="coin-app">
@@ -33,6 +40,8 @@ const filterTheCoins = coinsList.filter(coin =>
                     <input type="text" placeholder="Bitcoin" className="coin-input" onChange={onChangeSearch}></input> 
 
                 </form>
+                <br/>
+                <h3>Top coins </h3>
             </div>
             {filterTheCoins.map(coin => {
                 return( 
