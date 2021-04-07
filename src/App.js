@@ -4,6 +4,7 @@ import Home from './component/home/Home';
 import { FavoriteProvider } from './component/userfav/Favorite';
 import Nav from './component/nav/Nav';
 import UserPage from './component/userpage/UserPage';
+import CoinDetails from './component/coindetails/CoinDetails';
 
 
 
@@ -18,6 +19,7 @@ function App() {
       <Switch>
       <Route exact path="/" component={Home}/>
       <Route path="/mybalance" component={UserPage}/>
+      <Route path="/usercoins/:id" component={CoinDetails}/>
       </Switch>
       </Router>
       </FavoriteProvider>
