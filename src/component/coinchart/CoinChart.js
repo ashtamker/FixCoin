@@ -3,7 +3,7 @@ import Chartjs from 'chart.js';
 
 const CoinChart = () => {
     return(
-        <div>asdasd</div>
+        <div></div>
     )
 
  }
