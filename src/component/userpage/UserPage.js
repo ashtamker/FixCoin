@@ -41,7 +41,7 @@ const UserPage = () => {
         return (
            <div>
                <h1 style={{color:"#45a29e"}}> My List</h1>
-               <AddCoin key={coins}/>
+               <AddCoin />
             <ul className="coinlist list-group mt-2 shadow border p-2 rounded mt-2 container">
                 {coins.map(coin => {
                     return <UserCoin  
