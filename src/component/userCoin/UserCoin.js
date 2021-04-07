@@ -29,7 +29,7 @@ const UserCoin = ({ coin, deleteCoin }) => {
               e.preventDefault();
               deleteCoin(coin.id);
             }}
-            className="delete-icon far fa-times-circle text-danger">X</button>
+            className="delete-icon far fa-times-circle text-danger"></button>
         </li>
       </Link>
     );
