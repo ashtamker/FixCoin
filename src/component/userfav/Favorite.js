@@ -7,7 +7,7 @@ export const Favorite =  createContext();
 
 export const FavoriteProvider = (props) => {
     const [watchList, setWatchList] = useState(
-      localStorage.getItem("myList").split(",") || ["bitcoin", "ethereum", "qtum"])
+      localStorage.getItem("myList").split(",") || ["bitcoin", "ethereum", "qtum"]);
     
     useEffect(() => {
         localStorage.setItem("myList", watchList);
