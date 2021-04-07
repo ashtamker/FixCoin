@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import CoinFullData from '../coinfulldata/CoinFullData';
-import CoinChart from '../coinchart/CoinChart'
+import CoinChart from '../coinchart/CoinChart';
 import axios from 'axios';
 
 const CoinDetails = () => {
