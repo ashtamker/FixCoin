@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from 'react';
-import Chart from "chart.js";
+import {Chart} from "react-chartjs-2";
 
 export const CoinChart = () => {
     const myRef = useRef();
