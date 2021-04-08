@@ -10,31 +10,39 @@ const Home = () => {
     const [searchCoin, setSearchCoin] = useState('');
     const [currentPage, setCurrentPage] = useState(1);
     const [coinPerPage] = useState(25);
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
-    axios
-    .get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=1&sparkline=false')
-    .then(results => {
+    const fetchCoins = async () => {
+        setLoading(true);
+        const results = await axios.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=1&sparkline=false')
         setCoinsList(results.data);
+        setLoading(false);
+    }
+    //     axios
+    // .get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=250&page=1&sparkline=false')
+    // .then(results => {
+    //     setCoinsList(results.data);
 
-    }).catch(
-        error => console.log(error));
+    // }).catch(
+    //     error => console.log(error));
+        fetchCoins();
     },[]);
 
 const onChangeSearch = e => {
     setSearchCoin(e.target.value)
 }
 
-// const filterTheCoins = coinsList.filter(coin => 
-//    coin.name.toLowerCase().includes(searchCoin.toLowerCase()))
-// console.log(coinsList);
+const filterTheCoins = coinsList.filter(coin => 
+   coin.name.toLowerCase().includes(searchCoin.toLowerCase()))
+console.log(coinsList);
 
     const indexOfLastPost = currentPage * coinPerPage;
     const indexOfFirstPost = indexOfLastPost - coinPerPage;
     const currentCoins = coinsList.slice(indexOfFirstPost, indexOfLastPost).filter(coin => 
         coin.name.toLowerCase().includes(searchCoin.toLowerCase()));
 
-    const makePage = (pageNumbers) => setCurrentPage(pageNumbers);
+    const makePage = pageNumbers => setCurrentPage(pageNumbers);
 
 
     return(
@@ -51,7 +59,7 @@ const onChangeSearch = e => {
             </div>
             
                 {/* <Coin coins={currentCoins} />  */}
-            {currentCoins.map(coin => {
+            {filterTheCoins.map(coin => {
                 return( 
                    <Coin 
                     key={coin.id} 
@@ -62,10 +70,11 @@ const onChangeSearch = e => {
                     price={coin.current_price}
                     priceChange={coin.price_change_percentage_24h} 
                     marketcap={coin.market_cap}
+                    loading={loading}
                     /> 
                 )
             })}
-            <Pagination coinPerPage={coinPerPage} totalCoins={coinsList.length} makePage={makePage}/>
+            <Pagination coinPerPage={coinPerPage} totalCoins={coinsList.length} makePage={makePage} />
         </div>
     )
 }

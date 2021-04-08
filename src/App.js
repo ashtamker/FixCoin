@@ -19,6 +19,7 @@ function App() {
       <Nav />
       <Switch>
       <Route exact path="/" component={Home}/>
+      <Route path="/!#" component={Home}/>
       <Route path="/about" component={AboutCrypto}/>
       <Route path="/mybalance" component={UserPage}/>
       <Route path="/usercoins/:id" component={CoinDetails}/>
