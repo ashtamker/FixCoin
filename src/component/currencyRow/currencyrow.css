@@ -1,0 +1,35 @@
+.main-currencyrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 10vh;
+    
+}
+
+.convert-title {
+    margin: 0;
+    margin-bottom: 0.5rem;
+    color: #45a29e;
+}
+
+.input-currencyrow {
+    border: 1px solid #66fcf1;
+    padding: 0.5em;
+    width: 10em;
+    color: #c5c6c7;
+}
+
+.select-currencyrow {
+    margin-left: 1em;
+    background-color: #0b0c10;
+    color: #c5c6c7;
+}
+
+.eq-currencyrow {
+    font-weight: 300;
+    font-size: 26px;
+}
+
+
+

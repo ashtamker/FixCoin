@@ -1,9 +1,13 @@
 import React from 'react';
+import './currencyrow.css';
 
 const CurrencyRow = () => {
     return(
-        <div>
-            <h1>coin</h1>
+        <div className="main-currencyrow">
+            <input type="number" className="input-currencyrow"></input>
+            <select className="select-currencyrow">
+                <option value="Btc">Btc</option>
+            </select>
             
         </div>
     )
