@@ -12,10 +12,12 @@ const Nav = ()=> {
                 <Link to='/about'>
                 <li id="about">What Is Crypto</li>
                 </Link>
-                <Link to='/mybalance'>
+                <Link to="/mybalance">
                 <li className="list-li">My Wallet</li>
                 </Link>
+                <Link to="/convert">
                 <li>Convert</li>
+                </Link>
             </ul>
         </div>
     )

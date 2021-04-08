@@ -6,6 +6,7 @@ import Nav from './component/nav/Nav';
 import UserPage from './component/userpage/UserPage';
 import CoinDetails from './component/coindetails/CoinDetails';
 import AboutCrypto from './component/about/AboutCrypto';
+import Convert from './component/convert/Convert';
 
 
 
@@ -20,6 +21,7 @@ function App() {
       <Switch>
       <Route exact path="/" component={Home}/>
       <Route path="/!#" component={Home}/>
+      <Route path="/convert" component={Convert}/>
       <Route path="/about" component={AboutCrypto}/>
       <Route path="/mybalance" component={UserPage}/>
       <Route path="/usercoins/:id" component={CoinDetails}/>
